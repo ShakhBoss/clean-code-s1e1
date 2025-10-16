@@ -37,7 +37,7 @@ const createNewTaskElement = function (taskString) {
 	editInput.type = 'text'
 	editInput.className = 'task'
 
-	editButton.textContent = 'Edit' 
+	editButton.textContent = 'Edit'
 	editButton.className = 'edit'
 
 	deleteButton.className = 'delete'
@@ -54,13 +54,13 @@ const createNewTaskElement = function (taskString) {
 }
 
 const addTask = function () {
-	const text = taskInput.value.trim();
-	if (!text) return;
+	const text = taskInput.value.trim()
+	if (!text) return
 
-	const listItem = createNewTaskElement(text);
-	incompleteTaskHolder.appendChild(listItem);
-	bindTaskEvents(listItem, taskCompleted);
-	taskInput.value = "";
+	const listItem = createNewTaskElement(text)
+	incompleteTaskHolder.appendChild(listItem)
+	bindTaskEvents(listItem, taskCompleted)
+	taskInput.value = ''
 }
 
 //Edit an existing task.
@@ -120,14 +120,11 @@ const taskIncomplete = function () {
 	bindTaskEvents(listItem, taskCompleted)
 }
 
-
-
 //The glue to hold it all together.
 
 //Set the click handler to the addTask function.
 
 addButton.addEventListener('click', addTask)
-
 
 const bindTaskEvents = function (taskListItem, checkBoxEventHandler) {
 	console.log('bind list item events')
@@ -136,12 +133,9 @@ const bindTaskEvents = function (taskListItem, checkBoxEventHandler) {
 	const editButton = taskListItem.querySelector('button.edit')
 	const deleteButton = taskListItem.querySelector('button.delete')
 
-	//Bind editTask to edit button.
-	editButton.onclick = editTask
-	//Bind deleteTask to delete button.
-	deleteButton.onclick = deleteTask
-	//Bind taskCompleted to checkBoxEventHandler.
-	checkBox.onchange = checkBoxEventHandler
+	editButton.addEventListener('click', editTask)
+	deleteButton.addEventListener('click', deleteTask)
+	checkBox.addEventListener('change', checkBoxEventHandler)
 }
 
 //cycle over incompleteTaskHolder ul list items
