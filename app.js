@@ -29,7 +29,7 @@ const createNewTaskElement = function (taskString) {
 	const deleteButton = document.createElement('button') //delete button
 	const deleteButtonImg = document.createElement('img') //delete button image
 
-	label.innerText = taskString
+	label.textContent = taskString
 	label.className = 'task'
 
 	//Each elements, needs appending
@@ -79,10 +79,10 @@ const editTask = function () {
 	if (containsClass) {
 		//switch to .editmode
 		//label becomes the inputs value.
-		label.innerText = editInput.value
+		label.textContent = editInput.value
 		editBtn.innerText = 'Edit'
 	} else {
-		editInput.value = label.innerText
+		editInput.value = label.textContent
 		editBtn.innerText = 'Save'
 	}
 
