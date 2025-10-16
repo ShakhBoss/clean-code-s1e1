@@ -37,7 +37,7 @@ const createNewTaskElement = function (taskString) {
 	editInput.type = 'text'
 	editInput.className = 'task'
 
-	editButton.innerText = 'Edit' 
+	editButton.textContent = 'Edit' 
 	editButton.className = 'edit'
 
 	deleteButton.className = 'delete'
@@ -80,10 +80,10 @@ const editTask = function () {
 		//switch to .editmode
 		//label becomes the inputs value.
 		label.textContent = editInput.value
-		editBtn.innerText = 'Edit'
+		editBtn.textContent = 'Edit'
 	} else {
 		editInput.value = label.textContent
-		editBtn.innerText = 'Save'
+		editBtn.textContent = 'Save'
 	}
 
 	//toggle .editmode on the parent.
