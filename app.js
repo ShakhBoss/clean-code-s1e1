@@ -41,7 +41,9 @@ const createNewTaskElement = function (taskString) {
 	editButton.className = 'edit'
 
 	deleteButton.className = 'delete'
+	deleteButton.setAttribute('aria-label', 'Delete task')
 	deleteButtonImg.src = './remove.svg'
+	deleteButtonImg.alt = ''
 	deleteButton.appendChild(deleteButtonImg)
 
 	//and appending.
